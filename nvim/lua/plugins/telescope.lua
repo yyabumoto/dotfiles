@@ -33,10 +33,12 @@ return {
               ["<C-k>"] = actions.move_selection_previous,
             },
           },
-          pickers = {
-            find_files = {
-              hidden = true,
-            },
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+            -- show dotfiles but keep the .git directory out of the results
+            find_command = { "rg", "--files", "--color", "never", "--glob", "!**/.git/*" },
           },
         },
       }
