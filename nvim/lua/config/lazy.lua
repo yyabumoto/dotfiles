@@ -33,7 +33,9 @@ require("lazy").setup({
   },
   install = { colorscheme = { "tokyonight" } },
   checker = {
-    enabled = true, -- check for plugin updates periodically
+    -- the checker spawns git for every plugin on each startup, which stalls the UI for seconds;
+    -- update manually with :Lazy update instead
+    enabled = false,
     notify = false, -- notify on update
   }, -- automatically check for plugin updates
   performance = {
