@@ -13,10 +13,13 @@ vim.keymap.set("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increa
 vim.keymap.set({ "n", "v" }, "f", "<cmd>HopWord<cr>", { desc = "HopWord" })
 
 -- comment.nvim
-local comment_api = require("Comment.api")
 vim.keymap.del("n", "<C-/>")
-vim.keymap.set("n", "<C-/>", comment_api.call("toggle.linewise.current", "g@$"), { expr = true })
-vim.keymap.set("x", "<C-/>", comment_api.call("toggle.linewise", "g@"), { expr = true })
+vim.keymap.set("n", "<C-/>", function()
+  return require("Comment.api").call("toggle.linewise.current", "g@$")()
+end, { expr = true })
+vim.keymap.set("x", "<C-/>", function()
+  return require("Comment.api").call("toggle.linewise", "g@")()
+end, { expr = true })
 
 -- terminal
 vim.keymap.set("n", "<C-t>", function()

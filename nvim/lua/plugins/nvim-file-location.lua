@@ -1,5 +1,6 @@
 return {
   "diegoulloao/nvim-file-location",
+  keys = { { "<leader>fy", desc = "Copy file location" } },
   opts = {
     keymap = "<leader>fy",
     mode = "workdir",

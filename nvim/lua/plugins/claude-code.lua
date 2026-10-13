@@ -3,6 +3,12 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim", -- Required for git operations
   },
+  cmd = { "ClaudeCode", "ClaudeCodeContinue", "ClaudeCodeResume", "ClaudeCodeVerbose", "ClaudeCodeVersion" },
+  keys = {
+    { "<C-,>", "<cmd>ClaudeCode<cr>", desc = "Claude Code" },
+    { "<leader>cC", "<cmd>ClaudeCodeContinue<cr>", desc = "Claude Code (continue)" },
+    { "<leader>cV", "<cmd>ClaudeCodeVerbose<cr>", desc = "Claude Code (verbose)" },
+  },
   config = function()
     require("claude-code").setup({
       command = "claude",

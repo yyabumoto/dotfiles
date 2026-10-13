@@ -1,5 +1,5 @@
 return {
-  { "akinsho/git-conflict.nvim", version = "*", config = true },
+  { "akinsho/git-conflict.nvim", version = "*", event = "LazyFile", config = true },
   {
     "kdheepak/lazygit.nvim",
     lazy = true,
